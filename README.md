@@ -1,4 +1,4 @@
-# openclaw-cli
+# OmniDev (AI-Powered Coding Agent)
 
 To install dependencies:
 
