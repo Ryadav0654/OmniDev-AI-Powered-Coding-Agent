@@ -1,6 +1,8 @@
 import { select, isCancel } from "@clack/prompts";
 import chalk from "chalk";
-import { runAgentMode } from "./agents/orchestrator";
+import { runAgentMode } from "./agent/orchestrator";
+import { runPlanMode } from "./plan/orchestrator";
+import { runAskMode } from "./ask/orchestrator";
 
 export const runCLIMode = async () => {
   while (true) {
@@ -34,10 +36,10 @@ export const runCLIMode = async () => {
       await runAgentMode();
     }
     if (mode === "Plan") {
-      console.log(chalk.dim("Plan mode is running...."));
+      await runPlanMode();
     }
     if (mode === "Ask") {
-      console.log(chalk.dim("Ask mode is running...."));
+      await runAskMode();
     }
     if (mode !== "Agent" && mode !== "Plan" && mode !== "Ask") {
       console.log(chalk.yellow("\nThis mode is not supported yet.\n"));

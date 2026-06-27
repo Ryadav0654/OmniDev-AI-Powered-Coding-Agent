@@ -31,7 +31,7 @@ export class ActionTracker {
     return this.actions;
   }
 
-  getPendingActions: () => ActionLog[] = () => {
+  getPendingMutations: () => ActionLog[] = () => {
     return this.actions.filter(
       (action) => isMutationType(action.type) && action.status === "pending",
     );
